@@ -3,18 +3,20 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable()
 export class SpotifyService {
+  objeto: any = {};
   constructor(private httpClient: HttpClient) {}
 
   getNewReleases() {
     let headers = new HttpHeaders();
     headers = headers.append(
       "Authorization",
-      "Bearer BQBX3RSSQA8Ln-QlmM44TZ2xL3Lm1a7ZljT2Wgni90bqHnmebfpI6-rfWr1l6JuJaOjw1mUfhqrAB0Ixu0Q"
+      "Bearer BQBFhI1pUMDa6Sf_PIpm6ylUZWg_gsAKFNtoG2_rGtb4RMIpuapcXaXGH03ruMfwT1l5t04Ku6FFz3vnrTE"
     );
-    this.httpClient
-      .get("https://api.spotify.com/v1/browse/new-releases", { headers })
-      .subscribe((data) => {
-        console.log(data);
-      });
+    return this.httpClient.get(
+      "https://api.spotify.com/v1/browse/new-releases?limit=20",
+      {
+        headers,
+      }
+    );
   }
 }

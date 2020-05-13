@@ -8,7 +8,9 @@ a,
 img {
   outline: none;
 }
-
+#centrado {
+  margin: 0 auto;
+}
 hr {
   border-color: white;
 }

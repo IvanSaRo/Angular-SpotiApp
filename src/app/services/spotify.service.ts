@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class SpotifyService {
@@ -12,12 +13,11 @@ export class SpotifyService {
       "Authorization",
       "Bearer BQCYcfrLG8C1uzFasRyhQJJPYTkKD8u-24yZvaw6Byv4tCgp-vdO9b28ozcT64WBYa2MFifa29WEFhRi1pg"
     );
-    return this.httpClient.get(
-      "https://api.spotify.com/v1/browse/new-releases?limit=20",
-      {
+    return this.httpClient
+      .get("https://api.spotify.com/v1/browse/new-releases?limit=20", {
         headers,
-      }
-    );
+      })
+      .pipe(map((data) => data["albums"].items));
   }
   //    https://api.spotify.com/v1/search?q=madonna&type=artist&limit=20
   getArtista(termino: string) {
@@ -26,11 +26,13 @@ export class SpotifyService {
       "Authorization",
       "Bearer BQCYcfrLG8C1uzFasRyhQJJPYTkKD8u-24yZvaw6Byv4tCgp-vdO9b28ozcT64WBYa2MFifa29WEFhRi1pg"
     );
-    return this.httpClient.get(
-      `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
-      {
-        headers,
-      }
-    );
+    return this.httpClient
+      .get(
+        `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
+        {
+          headers,
+        }
+      )
+      .pipe(map((data) => data["artists"].items));
   }
 }

@@ -11,8 +11,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) {
     this.spotifyService.getNewReleases().subscribe((data: any) => {
-      console.log(data.albums.items);
-      this.nuevos = data.albums.items;
+      this.nuevos = data; //gracias al map y al pipe en vez de poner data.album.items ya le paso el dato que quiero como data
     });
   }
 

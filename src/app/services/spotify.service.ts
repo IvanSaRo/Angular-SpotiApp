@@ -13,7 +13,7 @@ export class SpotifyService {
     let headers = new HttpHeaders();
     headers = headers.append(
       "Authorization",
-      "Bearer BQDoSFIx-HOBNS3s1gJBHlNqW4o4gQZU5Nd-0qm7HzL9746seQ8d9xIyqwdiZ0HwgT54lS8cqPcZNCKlXTs"
+      "Bearer BQAqgkE0zDBoBP5CcdI5Ma3UNbuljuo_c3-rritK1XjsFk7XvBJN7W73ZrehYhRxNBD-wf3KINjhXA-vEa8"
     );
 
     return this.httpClient.get(url, { headers });

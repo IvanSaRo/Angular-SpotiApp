@@ -17,6 +17,10 @@ import { ROUTES } from "./app.routes";
 //SERVICIOS
 import { SpotifyService } from "./services/spotify.service";
 
+// PIPES
+import { NoimaqePipe } from "./pipes/noimaqe.pipe";
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,8 @@ import { SpotifyService } from "./services/spotify.service";
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
+    NoimaqePipe,
+    TarjetasComponent,
   ],
   imports: [
     BrowserModule,

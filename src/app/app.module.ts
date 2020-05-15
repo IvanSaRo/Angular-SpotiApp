@@ -20,6 +20,7 @@ import { SpotifyService } from "./services/spotify.service";
 // PIPES
 import { NoimaqePipe } from "./pipes/noimaqe.pipe";
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     NavbarComponent,
     NoimaqePipe,
     TarjetasComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export const ROUTES = [
     component: HomeComponent,
   },
   {
-    path: "artista",
+    path: "artista/:id",
     component: ArtistaComponent,
   },
   {

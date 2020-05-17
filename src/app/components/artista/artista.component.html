@@ -24,3 +24,39 @@
     </button>
   </div>
 </div>
+
+<div class="col m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Album</th>
+        <th>Canción</th>
+        <th>Vista previa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cancion of topTracks">
+        <td>
+          <img
+            [src]="cancion.album.images | noimaqe"
+            alt="{{ cancion.album.name }}"
+            class="img-thumb"
+          />
+        </td>
+        <td>{{ cancion.album.name }}</td>
+        <td>{{ cancion.name }}</td>
+        <td>
+          <iframe
+            [src]="cancion.uri | domseguro"
+            width="300"
+            height="80"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

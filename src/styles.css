@@ -9,7 +9,7 @@ img {
   outline: none;
 }
 #centrado {
-  margin: 0 auto;
+  background-color: white;
 }
 hr {
   border-color: white;
@@ -69,4 +69,8 @@ hr {
 
 .fadeIn {
   animation-name: fadeIn;
+}
+th,
+td {
+  color: white;
 }
